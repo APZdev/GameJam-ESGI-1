@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         highScore = PlayerPrefs.GetFloat("HighScore");
     }
 
@@ -26,8 +26,7 @@ public class MenuManager : MonoBehaviour
         PlayerPrefs.SetFloat("HighScore", _highScore);
     }
 
-    public void OnClick_ChangeScene()
-    {
+    public void OnClick_ChangeScene() {
         SceneManager.LoadScene(1);
     }
 }

@@ -16,6 +16,7 @@ public class GrapplingController : MonoBehaviour
     private bool headIsAtOrigin;
 
     void Update() {
+        if (GameManager.Instance == null) return;
         if (!GameManager.Instance.Running) return;
         GrapplingPickup();
         GrapplingMovements();

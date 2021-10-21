@@ -241,7 +241,7 @@ MonoBehaviour:
   grapplingWire: {fileID: 1664154726819530530}
   grapplingPosClampX: 8
   glapplingMovementSpeed: 6
-  pickupSpeed: 4
+  pickupSpeed: 8
   idlePos: 0
   endPos: -7.5
 --- !u!1 &1664154727743154883

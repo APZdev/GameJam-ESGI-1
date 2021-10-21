@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float itemSpeed = 5f;
+    [SerializeField] private ItemSpawner spawner;
     [SerializeField] private Item[] itemsList;
     [SerializeField] private float spawnDelay = 1f;
     [SerializeField] private float spawnVariability = 0.5f;
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
         if (_lastSpawn > spawnDelay + Random.Range(-spawnVariability, spawnVariability)) {
             _lastSpawn = 0;
             int index = Random.Range(0, itemsList.Length);
-            Instantiate(itemsList[index]);
+            Instantiate(itemsList[index], spawner.transform.position, Quaternion.identity);
         }
 
         _lastSpawn += Time.deltaTime;

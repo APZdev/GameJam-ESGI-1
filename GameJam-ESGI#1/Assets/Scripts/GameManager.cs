@@ -1,3 +1,4 @@
+
 using System;
 using TMPro;
 using UnityEngine;
@@ -15,7 +16,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI livesText;
     [SerializeField] private int lives = 5;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private float spawnMinimumDelay = 0.5f;
+    
+    public AnimationCurve SpeedIncrease;
+    public AnimationCurve EnemyIncrease;
+    
     private float _lastSpawn;
+    private float timeToSpawn;
+
+    private float timeElapsed;
+    private float startTime;
+    private float baseSpeed;
     
     public static GameManager Instance { get; private set; }
 
@@ -30,25 +41,34 @@ public class GameManager : MonoBehaviour
         else {
             Destroy(gameObject);
         }
-
         livesText.text = lives.ToString();
         Running = true;
+
+        startTime = Time.time;
+        baseSpeed = itemSpeed;
     }
 
     private void Update() {
         if (!Running) return;
-        if (_lastSpawn > spawnDelay + Random.Range(-spawnVariability, spawnVariability)) {
+        
+        timeElapsed = Time.time - startTime;
+        itemSpeed = baseSpeed * SpeedIncrease.Evaluate(timeElapsed);
+        if (_lastSpawn > timeToSpawn) {
             _lastSpawn = 0;
-            int index = Random.Range(0, itemsList.Length);
+            timeToSpawn = spawnMinimumDelay + (spawnDelay)/itemSpeed * Random.Range(0, spawnVariability);
+            float i = Random.Range(0f, 1f);
+            int index = i >= EnemyIncrease.Evaluate(timeElapsed) ? 0 : 1;
             Instantiate(itemsList[index], spawner.transform.position, Quaternion.identity);
         }
 
         _lastSpawn += Time.deltaTime;
+        
+        
     }
 
     public void AddPoint(int value) {
         _currentScore += value;
-        scoreText.text = value.ToString();
+        scoreText.text = _currentScore.ToString();
     }
 
     public void TakeDamage(int value) {

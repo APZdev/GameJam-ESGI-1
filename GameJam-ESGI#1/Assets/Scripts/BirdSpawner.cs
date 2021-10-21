@@ -40,7 +40,9 @@ public class BirdSpawner : MonoBehaviour
         spawnPoint = canSpawnRight ? spawnPoint = Random.Range(0, 1) : spawnPoint = Random.Range(0, 2);
 
         bool isRight = spawnPoint == 0 ? true : false;
+        int dir = isRight ? 1 : -1;
         bird.GetComponent<BirdBehaviour>().isRight = isRight;
+        bird.transform.localScale = new Vector3(dir * 0.2f, 0.2f, 0.2f);
         bird.transform.position = spawners[spawnPoint].transform.position;
 
         Destroy(bird, 10f);

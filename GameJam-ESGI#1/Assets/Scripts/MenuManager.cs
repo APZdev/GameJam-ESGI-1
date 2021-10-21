@@ -12,20 +12,21 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         highScore = PlayerPrefs.GetFloat("HighScore");
     }
 
     void Update()
     {
-        highScoreTxt.text = highScore.ToString();
+        highScoreTxt.text =  $"HIGHSCORE : {highScore}";
     }
 
-    private void SetHighScore(float _highScore)
+    public void SetHighScore(float _highScore)
     {
         PlayerPrefs.SetFloat("HighScore", _highScore);
     }
 
-    private void OnClick_ChangeScene()
+    public void OnClick_ChangeScene()
     {
         SceneManager.LoadScene(1);
     }

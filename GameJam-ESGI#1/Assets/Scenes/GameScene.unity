@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -162,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838016318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.99, y: 2.13, z: 0}
+  m_LocalPosition: {x: 14.09, y: 2.13, z: 0}
   m_LocalScale: {x: 1, y: 6.4936795, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -608,13 +608,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871158a9fa5c54149bcdf07ecf00a4bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSpeed: 5
+  itemSpeed: 3
   spawner: {fileID: 1606612692}
   itemsList:
   - {fileID: 4021602501575418866, guid: bc8270f17026edd4fae1f25700fb72a5, type: 3}
   - {fileID: 8784398004847145385, guid: c806c36cb4421c541b1d46d39dfe3d2a, type: 3}
   spawnDelay: 1
-  spawnVariability: 0.5
+  spawnVariability: 2
+  spawnMinimumDelay: 0.1
+  SpeedIncrease:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.06
+      outSlope: 0.06
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 50
+      value: 4
+      inSlope: 0.06
+      outSlope: 0.06
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  EnemyIncrease:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.25
+      inSlope: 0.017646713
+      outSlope: 0.017646713
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.15780142
+    - serializedVersion: 3
+      time: 30
+      value: 0.75
+      inSlope: 0.004909719
+      outSlope: 0.004909719
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07801412
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &2026580526
 Transform:
   m_ObjectHideFlags: 0

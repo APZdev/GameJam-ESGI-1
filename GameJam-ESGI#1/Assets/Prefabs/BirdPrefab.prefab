@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6582930565333064572}
   - component: {fileID: 1701886140}
   - component: {fileID: 3313738803157091449}
+  - component: {fileID: 1693509504124357817}
   m_Layer: 8
   m_Name: BirdPrefab
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRight: 0
-  birdSpeed: 10
+  birdSpeed: 5
 --- !u!114 &6582930565333064572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,5 +124,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.46, y: 5.04, z: 0.2}
+  m_Size: {x: 6.46, y: 5.04, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1693509504124357817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4628110697424970956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f82728c9faffd48821f24207cc07f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLootable: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public float itemSpeed = 5f;
+    
     public static GameManager Instance { get; private set; }
     private void Awake()
     {

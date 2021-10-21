@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GrapplingController : MonoBehaviour
@@ -17,15 +15,8 @@ public class GrapplingController : MonoBehaviour
 
     private bool headIsAtOrigin;
 
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
+    void Update() {
+        if (!GameManager.Instance.Running) return;
         GrapplingPickup();
         GrapplingMovements();
     }

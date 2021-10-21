@@ -16,7 +16,11 @@ public class Item : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Despawn"))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
+        }
+        else if(other.gameObject.layer == LayerMask.NameToLayer("Player") && isLootable) {
+            GameManager.Instance.AddPoint(1);
+            Destroy(gameObject);
         }
     }
 }

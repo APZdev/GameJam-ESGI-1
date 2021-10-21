@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,9 +8,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Item[] itemsList;
     [SerializeField] private float spawnDelay = 1f;
     [SerializeField] private float spawnVariability = 0.5f;
+    [SerializeField] private TextMeshProUGUI scoreText;
     private float _lastSpawn;
     
     public static GameManager Instance { get; private set; }
+    
+    private int _currentScore;
     private void Awake()
     {
         if (Instance == null) {
@@ -28,5 +32,10 @@ public class GameManager : MonoBehaviour
         }
 
         _lastSpawn += Time.deltaTime;
+    }
+
+    public void AddPoint(int value) {
+        _currentScore += value;
+        scoreText.text = value.ToString();
     }
 }

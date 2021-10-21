@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 378199351}
   - component: {fileID: 378199350}
   m_Layer: 5
-  m_Name: ScoreText
+  m_Name: ScoreLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -928,6 +928,7 @@ MonoBehaviour:
   - {fileID: 8784398004847145385, guid: c806c36cb4421c541b1d46d39dfe3d2a, type: 3}
   spawnDelay: 1
   spawnVariability: 0.5
+  scoreText: {fileID: 2071519406}
 --- !u!4 &2026580526
 Transform:
   m_ObjectHideFlags: 0
@@ -954,7 +955,7 @@ GameObject:
   - component: {fileID: 2071519407}
   - component: {fileID: 2071519406}
   m_Layer: 5
-  m_Name: ScoreLabel
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
